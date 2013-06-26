@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="hci.shopping"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="7" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:debuggable="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <activity
+            android:label="@string/app_name"
+            android:name=".activities.MainActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="@string/categories"
+            android:name=".activities.CategoriesActivity" >
+        </activity>
+        <activity
+            android:label="@string/log_in"
+            android:name=".activities.LogInActivity" >
+        </activity>
+        <activity
+            android:label="@string/subcategories"
+            android:name=".activities.SubcategoriesActivity" >
+        </activity>
+        <activity
+            android:label="@string/products"
+            android:name=".activities.ProductsActivity" >
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name=".activities.MySearchActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name=".activities.HomeActivity" >
+        </activity>
+        <activity
+            android:label="@string/my_orders"
+            android:name=".activities.MyOrdersActivity" >
+        </activity>
+        <activity
+            android:label="@string/product"
+            android:name=".activities.ProductInfoActivity" >
+        </activity>
+        <activity
+            android:label="@string/order"
+            android:name=".activities.OrderActivity" >
+        </activity>
+
+        <service android:name=".services.CategoriesService" >
+        </service>
+        <service android:name=".services.SubcategoriesService" >
+        </service>
+        <service android:name=".services.ProductsService" >
+        </service>
+        <service android:name=".services.LogInService" >
+        </service>
+        <service android:name=".services.MyOrdersService" >
+        </service>
+        <service android:name=".services.ProductInfoService" >
+        </service>
+        <service android:name=".services.OrderService" >
+        </service>
+        <service android:name=".services.OrderUpdateService" >
+        </service>
+        <service android:name=".services.MySearchService" >
+        </service>
+
+        <provider
+            android:authorities="hci.shopping.providers.MySearchProvider"
+            android:name=".providers.MySearchProvider" >
+        </provider>
+
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".activities.MySearchActivity" />
+        <activity android:label="@string/settings" android:name=".activities.SettingsActivity"></activity>
+    </application>
+
+</manifest>
